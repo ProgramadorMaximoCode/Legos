@@ -11,8 +11,7 @@ class Ball {
     public:
         Ball(float x, float y);
 
-        void start(float angle, float pi);
-
+        void bounceFromPaddle(float relative);
         void bounceX();
         void bounceY();
         void update(float dt, RenderWindow& window);

@@ -8,20 +8,25 @@ Ball::Ball(float x, float y) {
     shape.setOrigin({10.f, 10.f});
     shape.setFillColor(sf::Color::Blue);
     shape.setPosition({x, y});
-    speed = 400.f;
+    speed = 200.f;
     velocity = {speed, speed};
-}
-
-void Ball::start(float angle, float pi) {
-    float radians = angle * pi / 180.f;
-    velocity.x = speed * cos(radians);
-    velocity.y = speed * sin(radians);
 }
 
 void Ball::resetToCenter(const sf::RenderWindow& window)
 {
     shape.setPosition({window.getSize().x / 2.f, window.getSize().y / 2.f});
     velocity = {0.f, 0.f};
+}
+
+void Ball::bounceFromPaddle(float relative) {
+
+    float maxAngle = 60.f;
+    float angle = relative * maxAngle;
+
+    float rad = angle * 3.14159f / 180.f;
+
+    velocity.x = speed * std::cos(rad);
+    velocity.y = -speed * std::sin(rad);
 }
 
 void Ball::bounceX() {

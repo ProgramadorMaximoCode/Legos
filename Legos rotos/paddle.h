@@ -4,7 +4,7 @@
 class Paddle {
     private:
         sf::RectangleShape shape;
-        float speed = 250.f;
+        float speed = 300.f;
 
     public:
         Paddle(float x, float y);
