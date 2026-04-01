@@ -13,6 +13,11 @@ class Paddle {
         void moveLeft(float dt);
         void setPosition(sf::Vector2f pos) { shape.setPosition(pos); }
         void draw(sf::RenderWindow& window);
+        void increaseSize();
+        void increaseSpeed();
+        void decreaseSpeed();
+        void decreaseSize();
+        void setNormal();
         const sf::RectangleShape& getShape();
         sf::FloatRect getGlobalBounds() const;
 };

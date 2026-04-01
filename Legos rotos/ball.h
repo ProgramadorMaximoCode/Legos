@@ -11,7 +11,6 @@ class Ball {
     public:
         Ball(float x, float y);
 
-        void bounceFromPaddle(float relative);
         void bounceX();
         void bounceY();
         void update(float dt, RenderWindow& window);
@@ -19,6 +18,7 @@ class Ball {
 
         const CircleShape& getShape();
         void resetToCenter(const sf::RenderWindow& window);
+        void positioningOverThePaddle(RectangleShape& Paddle);
         sf::FloatRect getGlobalBounds() const;
         void setPosition(sf::Vector2f pos) { shape.setPosition(pos); }
         sf::Vector2f getPosition() const { return shape.getPosition(); }
